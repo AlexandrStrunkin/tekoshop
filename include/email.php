@@ -1,0 +1,1 @@
+<a rel="nofollow" href="mailto:shop@teko.biz">shop@teko.biz</a>

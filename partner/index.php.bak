@@ -1,0 +1,96 @@
+<?
+require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+$APPLICATION->SetTitle("Монтажные организации");?>
+<?
+// Пагинация для мета-тегов
+if (($_REQUEST['page']) && ($_REQUEST['page'] != 1)) {
+	$add_str = ' - Страница ' . $_REQUEST['page'];
+}
+else {
+	$add_str = '';
+} 
+
+$title_page = "Компании предоставляющие услуги монтажа видеонаблюдения и систем безопасности" . $add_str;
+$dscr_page = "Список партнеров Teko-shop, монтажных организаций, которые оказывают услуги по установке видеонаблюдения и охранной сигнализации" . $add_str . '.';
+$APPLICATION->SetPageProperty("title", $title_page);
+$APPLICATION->SetPageProperty("description", $dscr_page);
+?>
+<div class="row">
+	<div class="col-main col-xs-12 col-sm-9">
+<h1>Монтажные организации<?=$add_str;?></h1>
+<span class="alert alert-warning" role="alert" style="display: block; margin-top:15px">
+	Приглашаем монтажные организации со всех городов России <a rel="nofollow" href="/forpartners/" >зарегистрироваться</a> в нашем каталоге. Смотрите <a rel="nofollow" href="/partner/help/helpm.php" >описание возможностей.</a>
+</span>
+		<?require('controller.php');?>
+	</div>
+
+	<div class="col-left sidebar col-xs-12 col-sm-3">
+		<?$APPLICATION->IncludeComponent(
+			"bitrix:main.include",
+			"",
+			Array(
+				"AREA_FILE_SHOW" => "file",
+				"PATH" => SITE_TEMPLATE_PATH."/include_areas/left_menu.php",
+				"EDIT_TEMPLATE" => ""
+			)
+		);?>
+
+		<?require($_SERVER["DOCUMENT_ROOT"].'/include/left_news.php')?>
+
+		<?$APPLICATION->IncludeComponent(
+			"bitrix:menu",
+			"actions_menu",
+			Array(
+				"ROOT_MENU_TYPE" => "actions",
+				"MENU_CACHE_TYPE" => "N",
+				"MENU_CACHE_TIME" => "3600",
+				"MENU_CACHE_USE_GROUPS" => "Y",
+				"MENU_CACHE_GET_VARS" => array(),
+				"MAX_LEVEL" => "1",
+				"CHILD_MENU_TYPE" => "left",
+				"USE_EXT" => "N",
+				"DELAY" => "N",
+				"ALLOW_MULTI_SELECT" => "N"
+			)
+		);?>
+
+		<?$APPLICATION->IncludeComponent("miha:catalog.compare.list", "mc_compare", array(
+				"IBLOCK_TYPE" => "catalog",
+				"IBLOCK_ID" => "",
+				"AJAX_MODE" => "N",
+				"AJAX_OPTION_JUMP" => "N",
+				"AJAX_OPTION_STYLE" => "Y",
+				"AJAX_OPTION_HISTORY" => "N",
+				"DETAIL_URL" => "",
+				"COMPARE_URL" => "compare.php",
+				"NAME" => "CATALOG_COMPARE_LIST",
+				"AJAX_OPTION_ADDITIONAL" => ""
+			),
+			false
+		);?>
+		<!--<img style="cursor: default;" id="bxid_933092" src="/bitrix/components/bitrix/main.include/images/include.gif" />-->
+
+		<?$APPLICATION->IncludeComponent(
+			"bitrix:voting.form",
+			"mc_voting_form",
+			Array(
+				"VOTE_ID" => "7",
+				"VOTE_RESULT_TEMPLATE" => "/catalog/vote_result.php?VOTE_ID=#VOTE_ID#",
+				"CACHE_TYPE" => "A",
+				"CACHE_TIME" => "3600"
+			),
+			false,
+			Array(
+				'ACTIVE_COMPONENT' => 'N'
+			)
+		);?><?$APPLICATION->IncludeComponent(
+			"bitrix:main.include",
+			"",
+			Array(
+				"AREA_FILE_SHOW" => "file",
+				"PATH" => SITE_TEMPLATE_PATH."/include_areas/price_list.php",
+				"EDIT_TEMPLATE" => ""
+			)
+		);?></div>
+</div>
+<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

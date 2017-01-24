@@ -1,0 +1,15 @@
+<?
+require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+$APPLICATION->SetTitle("");
+?>.filter-res {
+float:left; margin:10px;
+width:230px;
+font-size:11px;
+}
+.filter-res img{
+height:auto !important;
+width:100px !important;
+padding:4px;
+border:1px solid #2C2C31;
+margin:0 20px 0 0;
+}<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

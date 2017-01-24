@@ -1,0 +1,21 @@
+<?
+require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+$APPLICATION->SetTitle("");
+?><?xml version="1.0" encoding="utf-8" ?>
+<manifest xmlns="http://schemas.microsoft.com/wlw/manifest/weblog">
+   <options>
+     <clientType>MovableType</clientType>
+     <supportsCategoriesInline>Yes</supportsCategoriesInline>
+     <supportsSlug>Yes</supportsSlug>
+     <supportsPages>Yes</supportsPages>
+     <supportsScripts>Yes</supportsScripts>
+     <supportsEmbeds>Yes</supportsEmbeds>
+   </options>
+   <weblog>
+       <serviceName>Movable Type</serviceName>
+       <homepageLinkText>View site</homepageLinkText>
+       <adminLinkText>View Dashboard</adminLinkText>
+       <adminUrl><mt:AdminScript encode_xml="1"></adminUrl>
+       <postEditingUrl><mt:AdminScript encode_xml="1">?__mode=view&amp;_type=entry&amp;blog_id={blog-id}&amp;id={post-id}</postEditingUrl>
+   </weblog>
+</manifest><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

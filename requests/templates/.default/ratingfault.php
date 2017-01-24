@@ -1,0 +1,2 @@
+<?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
+Отзыв не принят. Вы не можете оставлять отзыв по данной заявке. Возможно, Ваш отзыв уже был учтен! <a href="/personal/requests/">Назад</a>

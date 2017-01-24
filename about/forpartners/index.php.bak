@@ -1,0 +1,79 @@
+<?
+define("NEED_AUTH", true);
+require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+$APPLICATION->SetPageProperty("title", "Подать заявку на партнерство");
+$APPLICATION->SetTitle("Подать заявку на партнерство");
+?> 
+<div class="page-title"> 
+  <h1>Подать заявку на партнерство</h1>
+ </div>
+ <?$APPLICATION->IncludeComponent(
+	"bitrix:form",
+	"uo_partner",
+	Array(
+		"AJAX_MODE" => "N",
+		"SEF_MODE" => "N",
+		"WEB_FORM_ID" => "6",
+		"RESULT_ID" => $_REQUEST[RESULT_ID],
+		"START_PAGE" => "new",
+		"SHOW_LIST_PAGE" => "N",
+		"SHOW_EDIT_PAGE" => "N",
+		"SHOW_VIEW_PAGE" => "N",
+		"SUCCESS_URL" => "",
+		"SHOW_ANSWER_VALUE" => "N",
+		"SHOW_ADDITIONAL" => "N",
+		"SHOW_STATUS" => "Y",
+		"EDIT_ADDITIONAL" => "N",
+		"EDIT_STATUS" => "Y",
+		"NOT_SHOW_FILTER" => array(),
+		"NOT_SHOW_TABLE" => array(),
+		"CHAIN_ITEM_TEXT" => "",
+		"CHAIN_ITEM_LINK" => "",
+		"IGNORE_CUSTOM_TEMPLATE" => "N",
+		"USE_EXTENDED_ERRORS" => "N",
+		"CACHE_TYPE" => "A",
+		"CACHE_TIME" => "3600",
+		"CACHE_NOTES" => "",
+		"AJAX_OPTION_JUMP" => "N",
+		"AJAX_OPTION_STYLE" => "Y",
+		"AJAX_OPTION_HISTORY" => "N",
+		"VARIABLE_ALIASES" => Array(
+			"action" => "action"
+		)
+	)
+);?> 
+<div> 
+  <br />
+<span class="alert alert-warning" role="alert" style="display: block; margin-top:15px">
+ Регистрируясь в данном сервисе вы принимаете следущие условия работы:</div>
+ 
+<div> 
+  <div class="WordSection1"> 
+    <p class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: 'Segoe UI', sans-serif;">1. </span><span style="font-family: 'Segoe UI', sans-serif;">Данный сервис является собственностью ЗАО &quot;ТЕКО&quot;. Проект не направлен на получение материальной выгоды нашей компанией и служит площадкой для контактов исполнителей и заказчиков.</span></p>
+   
+    <p class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: 'Segoe UI', sans-serif;">2. Разрешается его использовать только для взаимодействия исполнителя и заказчика.</span></p>
+   
+    <p class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: 'Segoe UI', sans-serif;">3. Компания ТЕКО не несет ответственности за недобросовенность клиентов и партнеров.</span></p>
+   
+    <p class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: 'Segoe UI', sans-serif;">4. Клиент может получить несколько предложений от исполнителей (тендерная основа) и выбрать наиболее выгодное, при составлении предложения учитывайте это.</span></p>
+   
+    <p class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: 'Segoe UI', sans-serif;">5. Клиент может подать индивидуальную заявку только одной компании, основываясь на своих предпочтениях, рейтинге компании в каталоге или более полной карточке партнера.</span></p>
+   
+    <p class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: 'Segoe UI', sans-serif;">6. Рейтинг расчитывается динамически и учитывает несколько факторов, он может как расти, так и падать, в зависимости от вашей активности и хорошей работы.</span></p>
+   
+    <p class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: 'Segoe UI', sans-serif;">7. Сервис производит отправку уведомлений, с адреса: </span><span style="font-family: 'Segoe UI', sans-serif;">shop@teko.biz. Данный адрес является автоматическим, просьба на него письма и ответы не отправлять.</span></p>
+   
+    <p class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: 'Segoe UI', sans-serif;">8. По окончании работ, просите клиента оценить вашу работу в нашем сервисе (ссылку клиент получит уведомлением или в своем Личном кабинете)</span></p>
+   
+    <p class="MsoNormal" style="margin-bottom: 0.0001pt;"><span lang="EN-US" style="font-size: 10pt; font-family: 'Segoe UI', sans-serif;"> </span></p>
+   </div>
+ </div>
+ 
+<div> После проверки вашей организации нашим менеджером, Вам откроются возможности по редактированию профиля монтажной организации и участие в сервисе согласования заявок от клиентов.</div>
+ 
+<div> 
+  <br />
+ </div>
+ </span>
+<div><span style="color: rgb(119, 119, 119); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 19.6000003814697px; background-color: rgb(255, 255, 255);">Ознакомьтесь с </span><a href="/partner/help/helpm.php" >инструкцией по пользованию сервисом</a><span style="color: rgb(119, 119, 119); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 19.6000003814697px; background-color: rgb(255, 255, 255);">, в случае сложностей и вопросов/пожеланий вы можете обратиться к нашим сотрудникам по телефону, онлайн-помощнику или с помощью электронной почты.</span></div>
+ <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

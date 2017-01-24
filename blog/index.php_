@@ -1,0 +1,110 @@
+<?
+require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+$APPLICATION->SetPageProperty("title", "Блог ТЕКО");
+$APPLICATION->SetPageProperty("description", "Блог сотрудников ЗАО ТЕКО, делимся своим опытом по системам безопасности");
+$APPLICATION->SetPageProperty("keywords", "Блог ТЕКО, обзор систем видеонаблюдения, системы безопасности, советы специалистов");
+$APPLICATION->SetTitle("");
+?>
+<p><?$APPLICATION->IncludeComponent("bitrix:blog", "one_blog1", array(
+	"MESSAGE_COUNT" => "40",
+	"PERIOD_DAYS" => "30",
+	"MESSAGE_COUNT_MAIN" => "6",
+	"BLOG_COUNT_MAIN" => "6",
+	"MESSAGE_LENGTH" => "100",
+	"BLOG_COUNT" => "5",
+	"DATE_TIME_FORMAT" => "d.m.Y H:i:s",
+	"NAV_TEMPLATE" => "arrows_adm",
+	"SMILES_COUNT" => "4",
+	"IMAGE_MAX_WIDTH" => "800",
+	"IMAGE_MAX_HEIGHT" => "800",
+	"EDITOR_RESIZABLE" => "Y",
+	"EDITOR_DEFAULT_HEIGHT" => "300",
+	"EDITOR_CODE_DEFAULT" => "N",
+	"SEF_MODE" => "Y",
+	"SEF_FOLDER" => "/blog/",
+	"CACHE_TYPE" => "A",
+	"CACHE_TIME" => "36000000",
+	"CACHE_TIME_LONG" => "360000",
+	"PATH_TO_SMILE" => "/bitrix/images/blog/smile/",
+	"SET_TITLE" => "N",
+	"SET_NAV_CHAIN" => "Y",
+	"USER_PROPERTY" => array(
+	),
+	"BLOG_PROPERTY" => array(
+	),
+	"BLOG_PROPERTY_LIST" => array(
+	),
+	"POST_PROPERTY" => array(
+	),
+	"POST_PROPERTY_LIST" => array(
+	),
+	"COMMENT_PROPERTY" => array(
+	),
+	"USE_ASC_PAGING" => "N",
+	"SHOW_RATING" => "Y",
+	"RATING_TYPE" => "like_graphic",
+	"ALLOW_POST_CODE" => "Y",
+	"USE_GOOGLE_CODE" => "Y",
+	"COMMENTS_COUNT" => "25",
+	"NOT_USE_COMMENT_TITLE" => "Y",
+	"AJAX_POST" => "Y",
+	"COMMENT_EDITOR_RESIZABLE" => "Y",
+	"COMMENT_EDITOR_DEFAULT_HEIGHT" => "200",
+	"COMMENT_EDITOR_CODE_DEFAULT" => "Y",
+	"COMMENT_ALLOW_VIDEO" => "N",
+	"COMMENT_ALLOW_IMAGE_UPLOAD" => "N",
+	"SHOW_SPAM" => "Y",
+	"NO_URL_IN_COMMENTS" => "",
+	"NO_URL_IN_COMMENTS_AUTHORITY" => "",
+	"THEME" => "green",
+	"USER_PROPERTY_NAME" => "",
+	"BLOG_URL" => "admin-blog-s1",
+	"NAME_TEMPLATE" => "#NOBR##LAST_NAME# #NAME##/NOBR#",
+	"SHOW_LOGIN" => "Y",
+	"DO_NOT_SHOW_SIDEBAR" => "Y",
+	"DO_NOT_SHOW_MENU" => "Y",
+	"USE_SHARE" => "Y",
+	"SHARE_HIDE" => "N",
+	"SHARE_TEMPLATE" => "",
+	"SHARE_HANDLERS" => array(
+		0 => "facebook",
+		1 => "lj",
+		2 => "delicious",
+		3 => "twitter",
+	),
+	"SHARE_SHORTEN_URL_LOGIN" => "",
+	"SHARE_SHORTEN_URL_KEY" => "",
+	"SEF_URL_TEMPLATES" => array(
+		"index" => "blog/",
+		"group" => "group/#group_id#.php",
+		"blog" => "",
+		"user" => "user/#user_id#.php",
+		"user_friends" => "friends/#user_id#.php",
+		"search" => "search.php",
+		"user_settings" => "#blog#/user_settings.php",
+		"user_settings_edit" => "#blog#/user_settings_edit.php?id=#user_id#",
+		"group_edit" => "#blog#/group_edit.php",
+		"blog_edit" => "blog_edit/",
+		"category_edit" => "#blog#/category_edit.php",
+		"post_edit" => "edit/#post_id#/",
+		"draft" => "draft/",
+		"moderation" => "moderation/",
+		"trackback" => POST_FORM_ACTION_URI."&blog=#blog#&id=#post_id#&page=trackback",
+		"post" => "#post_id#/",
+		"post_rss" => "rss/#post_id#",
+		"rss" => "rss/",
+		"rss_all" => "rss2/",
+	),
+	"VARIABLE_ALIASES" => array(
+		"user_settings_edit" => array(
+			"user_id" => "id",
+		),
+		"trackback" => array(
+			"blog" => "blog",
+			"post_id" => "id",
+		),
+	)
+	),
+	false
+);?></p>
+ <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

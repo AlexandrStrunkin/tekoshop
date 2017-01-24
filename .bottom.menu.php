@@ -1,0 +1,39 @@
+<?
+$aMenuLinks = Array(
+	Array(
+		"Компания", 
+		"/about/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Помощь", 
+		"/about/help/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Доставка", 
+		"/dostavka.php", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Оплата", 
+		"/oplata.php", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"teko.biz", 
+		"http://teko.biz/", 
+		Array(), 
+		Array(), 
+		"" 
+	)
+);
+?>
