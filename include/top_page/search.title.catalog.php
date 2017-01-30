@@ -1,8 +1,5 @@
-<?$APPLICATION->IncludeComponent(
-	"bitrix:search.title", 
-	"catalog", 
-	array(
-		"CATEGORY_0" => array(
+<?$APPLICATION->IncludeComponent("bitrix:search.title", "catalog", array(
+	"CATEGORY_0" => array(
 			0 => "iblock_catalog",
 		),
 		"CATEGORY_0_TITLE" => GetMessage("CATEGORY_PRODUСTCS_SEARCH_NAME"),
@@ -34,7 +31,17 @@
 		"PREVIEW_TRUNCATE_LEN" => "50",
 		"PREVIEW_WIDTH" => "38",
 		"PRICE_CODE" => array(
-			0 => "Цена ИМ(СпецЦена2)",
+			0 => "Д  5%",
+			1 => "Цена ИМ(СпецЦена2)",
+			2 => "Исходная розничная",
+			3 => "Ручная_2",
+			4 => "Розничная (Дилерская 10%)",
+			5 => "СпЦ 1 - 1%",
+			6 => "СпЦ 2",
+			7 => "Д 12%",
+			8 => "СпЦ 1",
+			9 => "Розн.",
+			10 => "Д 10%",
 		),
 		"PRICE_VAT_INCLUDE" => "Y",
 		"SHOW_ANOUNCE" => "N",
@@ -47,6 +54,6 @@
 	),
 	false,
 	array(
-		"ACTIVE_COMPONENT" => "Y"
+	"ACTIVE_COMPONENT" => "Y"
 	)
 );?>

@@ -30,3 +30,8 @@ ls
 cd upload
 ls
 scp -r * osg@vs02.osg.ru:/srv/www/dev-tekoshop.de.osg.ru/htdocs/upload
+ls
+git status
+git add --a
+git commit -m "create"
+git push origin master

@@ -7,8 +7,8 @@ global $GROUP_POLICY;
 $GROUP_POLICY = true;
 ?>
 <?$APPLICATION->IncludeComponent(
-	"bitrix:sale.order.ajax",
-	"",
+	"bitrix:sale.order.ajax", 
+	"teko-shop", 
 	array(
 		"PAY_FROM_ACCOUNT" => "N",
 		"ONLY_FULL_PAY_FROM_ACCOUNT" => "N",
@@ -35,7 +35,7 @@ $GROUP_POLICY = true;
 		"DISABLE_BASKET_REDIRECT" => "N",
 		"DISPLAY_IMG_WIDTH" => "90",
 		"DISPLAY_IMG_HEIGHT" => "90",
-		"COMPONENT_TEMPLATE" => ".default",
+		"COMPONENT_TEMPLATE" => "teko-shop",
 		"ALLOW_NEW_PROFILE" => "Y",
 		"SHOW_PAYMENT_SERVICES_NAMES" => "Y",
 		"COMPATIBLE_MODE" => "N",
@@ -52,25 +52,20 @@ $GROUP_POLICY = true;
 		"SHOW_BASKET_HEADERS" => "Y",
 		"DELIVERY_FADE_EXTRA_SERVICES" => "Y",
 		"SHOW_COUPONS_BASKET" => "Y",
-		"SHOW_COUPONS_DELIVERY" => "Y",
-		"SHOW_COUPONS_PAY_SYSTEM" => "Y",
+		"SHOW_COUPONS_DELIVERY" => "N",
+		"SHOW_COUPONS_PAY_SYSTEM" => "N",
 		"SHOW_NEAREST_PICKUP" => "Y",
 		"DELIVERIES_PER_PAGE" => "8",
 		"PAY_SYSTEMS_PER_PAGE" => "8",
 		"PICKUPS_PER_PAGE" => "5",
 		"SHOW_MAP_IN_PROPS" => "Y",
 		"SHOW_MAP_FOR_DELIVERIES" => array(
-			0 => "1",
-			1 => "2",
+			0 => "2",
 		),
 		"PROPS_FADE_LIST_1" => array(
-			0 => "1",
-			1 => "2",
-			2 => "3",
-			3 => "4",
-			4 => "7",
 		),
-		"PROPS_FADE_LIST_2" => "",
+		"PROPS_FADE_LIST_2" => array(
+		),
 		"PRODUCT_COLUMNS_VISIBLE" => array(
 			0 => "PREVIEW_PICTURE",
 			1 => "PROPS",
@@ -131,7 +126,8 @@ $GROUP_POLICY = true;
 		"ADDITIONAL_PICT_PROP_163" => "-",
 		"ADDITIONAL_PICT_PROP_171" => "-",
 		"ADDITIONAL_PICT_PROP_185" => "-",
-		"ADDITIONAL_PICT_PROP_186" => "-"
+		"ADDITIONAL_PICT_PROP_186" => "-",
+		"SHOW_NOT_CALCULATED_DELIVERIES" => "L"
 	),
 	false
 );?>
