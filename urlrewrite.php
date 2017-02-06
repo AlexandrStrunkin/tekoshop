@@ -73,10 +73,22 @@ $arUrlRewrite = array(
 		"SORT" => "100",
 	),
 	array(
+		"CONDITION" => "#^/catalog/video/#",
+		"RULE" => "",
+		"ID" => "bitrix:catalog",
+		"PATH" => "/catalog/video/index.php",
+	),
+	array(
 		"CONDITION" => "#^/catalog/kabel/#",
 		"RULE" => "",
 		"ID" => "bitrix:catalog",
 		"PATH" => "/catalog/kabel/index.php",
+	),
+	array(
+		"CONDITION" => "#^/catalog/audio/#",
+		"RULE" => "",
+		"ID" => "bitrix:catalog",
+		"PATH" => "/catalog/audio/index.php",
 	),
 	array(
 		"CONDITION" => "#^/info/articles/#",
@@ -86,29 +98,10 @@ $arUrlRewrite = array(
 		"SORT" => "100",
 	),
 	array(
-		"CONDITION" => "#^/catalog/video/#",
-		"RULE" => "",
-		"ID" => "bitrix:catalog",
-		"PATH" => "/catalog/video/index.php",
-	),
-	array(
-		"CONDITION" => "#^/catalog/audio/#",
-		"RULE" => "",
-		"ID" => "bitrix:catalog",
-		"PATH" => "/catalog/audio/index.php",
-	),
-	array(
 		"CONDITION" => "#^/catalog/skud/#",
 		"RULE" => "",
 		"ID" => "bitrix:catalog",
 		"PATH" => "/catalog/skud/index.php",
-	),
-	array(
-		"CONDITION" => "#^/info/article/#",
-		"RULE" => "",
-		"ID" => "bitrix:news",
-		"PATH" => "/info/article/index.php",
-		"SORT" => "100",
 	),
 	array(
 		"CONDITION" => "#^/company/news/#",
@@ -124,16 +117,23 @@ $arUrlRewrite = array(
 		"SORT" => "100",
 	),
 	array(
-		"CONDITION" => "#^/catalog/ups/#",
+		"CONDITION" => "#^/info/article/#",
 		"RULE" => "",
-		"ID" => "bitrix:catalog",
-		"PATH" => "/catalog/ups/index.php",
+		"ID" => "bitrix:news",
+		"PATH" => "/info/article/index.php",
+		"SORT" => "100",
 	),
 	array(
 		"CONDITION" => "#^/catalog/ops/#",
 		"RULE" => "",
 		"ID" => "bitrix:catalog",
 		"PATH" => "/catalog/ops/index.php",
+	),
+	array(
+		"CONDITION" => "#^/catalog/ups/#",
+		"RULE" => "",
+		"ID" => "bitrix:catalog",
+		"PATH" => "/catalog/ups/index.php",
 	),
 	array(
 		"CONDITION" => "#^/catalog/sks/#",

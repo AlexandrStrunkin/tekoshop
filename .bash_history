@@ -35,3 +35,19 @@ git status
 git add --a
 git commit -m "create"
 git push origin master
+cd /home/bitrix/ext_www/teko-shop.ru
+git status
+git push origin master
+git add --a
+git commit -m 'SUP-5796: many changes and content update'
+git push origin master
+git status
+ls
+df
+df -h
+du
+df -h
+df -h upload
+df -h /upload
+df -h /upload/
+df -h
