@@ -1,10 +1,10 @@
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetTitle("Оформление заказа");
+    $APPLICATION->SetTitle("Оформление заказа");
 ?>
 <?
-// для пересчёта цены
-global $GROUP_POLICY;
-$GROUP_POLICY = true;
+    // для пересчёта цены
+    global $GROUP_POLICY;
+    $GROUP_POLICY = true;
 ?>
 <?$APPLICATION->IncludeComponent(
     "bitrix:sale.order.ajax", 
@@ -132,6 +132,5 @@ $GROUP_POLICY = true;
         "ADDITIONAL_PICT_PROP_189" => "-"
     ),
     false
-);?>
-
+    );?>     
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
