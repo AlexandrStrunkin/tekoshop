@@ -71,7 +71,8 @@ function GetRegionData(){
     }
 function GetItemPrices(&$arItemPrices, $IBLOCK_ID, $manufacturerID){
     static $mfPrices, $arGroups;
-    global $regionPriceID, $allPrices, $USER; 
+
+    global $regionPriceID, $allPrices, $USER;
     $region_price = $min_price = $old_price = array();
     $PRICE_ROZN = PRICE_ROZN; // Цена по умолачнию - из настроек модуля tireos.prices
     $bManufacturerPrice = false;

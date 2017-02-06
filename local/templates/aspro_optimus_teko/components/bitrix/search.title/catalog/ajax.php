@@ -32,6 +32,7 @@
                                 list($min_price, $old_price, $region_price, $bManufacturerPrice) = GetItemPrices($arResult["ELEMENTS"][$arItem["ITEM_ID"]]["PRICES"], $arElement["IBLOCK_ID"], $arElement["PROPERTIES"]["PROIZVODITEL"]["VALUE_ENUM_ID"]);      
                                                                                 
                                 ?>
+
                                 <?if( count( $arElement["OFFERS"] ) > 0 ){
                                     $minPrice = false;
                                     $min_price_id=0;
@@ -129,4 +130,5 @@
 			<?endforeach;?>
 		<?endforeach;?>
 	</table>
+
 <?endif;?>

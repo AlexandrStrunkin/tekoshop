@@ -56,6 +56,7 @@ if(strlen($arResult["ERROR_MESSAGE"]) > 0){
 					    <?=$arQuantityData["HTML"]?>
 				    <?endif;?>
 			    </div>
+
 		<?endforeach;?>
 		<?if($empty_count==$count_stores){?>
 			<div class="stores_block">

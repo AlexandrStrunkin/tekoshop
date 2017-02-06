@@ -8,7 +8,6 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED!==true) die();
 /** @var array $arParams */
 /** @var array $arResult */
 
-
 $displayPreviewTextMode = array(
 	'H' => true,
 	'E' => true,
@@ -884,4 +883,5 @@ if(is_array($arParams["SECTION_TIZER"]) && $arParams["SECTION_TIZER"]){
             $quantity += $amount;
         }
         $arResult["STORES"]["NUM_AMOUNT"] = $quantity;
+
 ?>

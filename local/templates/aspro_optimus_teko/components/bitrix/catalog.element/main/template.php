@@ -3,6 +3,7 @@ $arParams["SHOW_ONE_CLICK_BUY"] = 'N';
 $arParams["SHOW_RATING"] = "N";
 $arParams["USE_REVIEW"] = "N";      
 ?>
+
 <div class="basket_props_block" id="bx_basket_div_<?=$arResult["ID"];?>" style="display: none;">
     <?if (!empty($arResult['PRODUCT_PROPERTIES_FILL'])){
         foreach ($arResult['PRODUCT_PROPERTIES_FILL'] as $propID => $propInfo){?>
@@ -107,10 +108,10 @@ if($arResult["OFFERS"]){
 $arOfferProps = implode(';', $arParams['OFFERS_CART_PROPERTIES']);
 
 // Ценовая политика
-                                     
-$min_price_id = 0;                                                                                                    
-list($min_price, $old_price, $region_price, $bManufacturerPrice) = GetItemPrices($arResult["PRICES"], $arResult["IBLOCK_ID"], $arResult["PROPERTIES"]["PROIZVODITEL"]["VALUE_ENUM_ID"]); 
-                                                                                                                                                                                      
+
+$min_price_id = 0;
+list($min_price, $old_price, $region_price, $bManufacturerPrice) = GetItemPrices($arResult["PRICES"], $arResult["IBLOCK_ID"], $arResult["PROPERTIES"]["PROIZVODITEL"]["VALUE_ENUM_ID"]);
+
 // save item viewed
 $arFirstPhoto = reset($arResult['MORE_PHOTO']);
 $arViewedData = array(
@@ -344,7 +345,8 @@ setViewedProduct(<?=$arResult['ID']?>, <?=CUtil::PhpToJSObject($arViewedData, fa
             <?}?>
             <div class="middle_info">
                 <div class="prices_block">
-                    <div class="cost prices clearfix">         
+
+                    <div class="cost prices clearfix">
                         <?if( count( $arResult["OFFERS"] ) > 0 ){
                             $minPrice = false;
                             $min_price_id=0;
