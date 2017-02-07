@@ -51,3 +51,31 @@ df -h upload
 df -h /upload
 df -h /upload/
 df -h
+ls
+git status
+git rm -r --cached cataloge
+git status
+git add --a
+git commit -m "work updates"
+git push origin master
+git pull origin master
+git add --a
+git comimt -m "init.php up"
+git commit -m "init.php up"
+git pull origin master
+git add local
+git pull origin master
+git commit -m "init.php up"
+git pull origin master
+git add --a
+git pull origin master
+git add --a
+git commit -m "resolve conflict"
+git pull origin master
+git push origin master
+git statis
+git status
+git add --a
+git commit -m "fix order page"
+git push origin master
+git pull origin master
