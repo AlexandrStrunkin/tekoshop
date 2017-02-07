@@ -45,7 +45,7 @@ global $catalogIDS;
 		"AJAX_OPTION_HISTORY" => "N",
 		"CACHE_TYPE" => "A",
 		"CACHE_TIME" => "36000000",
-		"CACHE_GROUPS" => "N",
+		"CACHE_GROUPS" => "Y",
 		"CACHE_FILTER" => "Y",
 		"META_KEYWORDS" => "-",
 		"META_DESCRIPTION" => "-",
