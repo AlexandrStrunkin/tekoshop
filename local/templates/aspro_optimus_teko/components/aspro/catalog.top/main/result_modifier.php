@@ -37,7 +37,105 @@ if ('TYPE_2' == $arParams['TYPE_SKU'] && $arParams['DISPLAY_TYPE'] !='table' ){
 }else{
 	$arParams['OFFER_TREE_PROPS'] = array();
 }
+                    
+if (!empty($arResult["ELEMENTS"]) && CModule::IncludeModule("iblock")){ 
+    /*convert currency*/
+    $arConvertParams = array();
+    if ('Y' == $arParams['CONVERT_CURRENCY'])
+    {
+        if (!CModule::IncludeModule('currency'))
+        {
+            $arParams['CONVERT_CURRENCY'] = 'N';
+            $arParams['CURRENCY_ID'] = '';
+        }
+        else
+        {
+            $currencyIterator = CurrencyTable::getList(array(
+                'select' => array('CURRENCY'),
+                'filter' => array('=CURRENCY' => $arParams['CURRENCY_ID'])
+            ));
+            if ($currency = $currencyIterator->fetch())
+            {
+                $arParams['CURRENCY_ID'] = $currency['CURRENCY'];
+                $arConvertParams['CURRENCY_ID'] = $currency['CURRENCY'];
+            }
+            else
+            {
+                $arParams['CONVERT_CURRENCY'] = 'N';
+                $arParams['CURRENCY_ID'] = '';
+            }
+            unset($currency, $currencyIterator);
+        }
+    }
+    $strBaseCurrency = '';
+    $boolConvert = isset($arConvertParams['CURRENCY_ID']);
+    if (!$boolConvert)
+        $strBaseCurrency = CCurrency::GetBaseCurrency();
 
+    $obParser = new CTextParser;
+
+    if (is_array($arParams["PRICE_CODE"]))
+        $arResult["PRICES"] = CIBlockPriceTools::GetCatalogPrices(0, $arParams["PRICE_CODE"]);
+    else
+        $arResult["PRICES"] = array();
+
+    $arSelect = array(
+        "ID",
+        "IBLOCK_ID",
+        "PREVIEW_TEXT",
+        "PREVIEW_PICTURE",
+        "DETAIL_PICTURE",
+    );
+    $arFilter = array(
+        "IBLOCK_LID" => SITE_ID,
+        "IBLOCK_ACTIVE" => "Y",
+        "ACTIVE_DATE" => "Y",
+        "ACTIVE" => "Y",
+        "CHECK_PERMISSIONS" => "Y",
+        "MIN_PERMISSION" => "R",
+    );
+    foreach($arResult["PRICES"] as $value)
+    {                              
+        $arSelect[] = $value["SELECT"];
+        $arFilter["CATALOG_SHOP_QUANTITY_".$value["ID"]] = 1;
+    }
+    $arFilter["=ID"] = $arResult["ELEMENTS"];
+    $rsElements = CIBlockElement::GetList(array(), $arFilter, false, false, $arSelect);
+    while($arElement = $rsElements->Fetch())
+    {
+        $arElement["PRICES"] = CIBlockPriceTools::GetItemPrices($arElement["IBLOCK_ID"], $arResult["PRICES"], $arElement, $arParams['PRICE_VAT_INCLUDE'], $arConvertParams);   
+        if($arParams["PREVIEW_TRUNCATE_LEN"] > 0)
+            $arElement["PREVIEW_TEXT"] = $obParser->html_cut($arElement["PREVIEW_TEXT"], $arParams["PREVIEW_TRUNCATE_LEN"]);
+
+        $arResult["ELEMENTS"][$arElement["ID"]] = $arElement;
+        
+        /*offers*/
+        $offersFilter = array(
+            'IBLOCK_ID' => $arElement['IBLOCK_ID'],
+            'HIDE_NOT_AVAILABLE' => "N"
+        );
+        $arOffers = CIBlockPriceTools::GetOffersArray(
+            $offersFilter,
+            array($arElement["ID"]),
+            array(),
+            array("ID"),
+            array(),
+            10,
+            $arResult["PRICES"],
+            $arParams['PRICE_VAT_INCLUDE'],
+            $arConvertParams
+        );
+        if($arOffers){
+            $arResult["ELEMENTS"][$arElement["ID"]]["OFFERS"]=$arOffers;
+            $arResult["ELEMENTS"][$arElement["ID"]]["MIN_PRICE"]=COptimus::getMinPriceFromOffersExt(
+                    $arOffers,
+                    $boolConvert ? $arConvertParams['CURRENCY_ID'] : $strBaseCurrency
+                );
+        }
+    }
+}                            
+
+//Код формирования списка цен у элементов, скопирован из формирования списка в search.title
 
 if (!empty($arResult['ITEMS'])){
 	$arEmptyPreview = false;
@@ -166,4 +264,35 @@ if (!empty($arResult['ITEMS'])){
 		$arResult["ITEMS"]=$arTmp;
 		unset($arTmp);
 	}
-}?>
+}               
+      
+//Конец скопированного кода
+
+//Привязка ID производителей из свойства к элементам      
+                                                    
+foreach($arResult["ELEMENTS"] as $i => $arItem) { 
+    if(!empty($arItem["ID"])) {
+        $arElementID[] = $arItem["ID"];
+    }                                   
+} 
+                                                              
+$arSelect = Array("ID", "NAME", "PROPERTY_PROIZVODITEL");
+$arFilter = Array("ID" => $arElementID, "ACTIVE_DATE"=>"Y", "ACTIVE"=>"Y");
+if (!empty($arElementID)) {
+    $res = CIBlockElement::GetList(Array(), $arFilter, false, Array(), $arSelect); 
+    while($ob = $res->GetNextElement()) {
+        $arFields = $ob->GetFields(); 
+        if(!empty($arFields['PROPERTY_PROIZVODITEL_ENUM_ID'])) {
+            $arProizvoditelEnumID[$arFields["ID"]] = $arFields['PROPERTY_PROIZVODITEL_ENUM_ID'];        
+        }                                                                                  
+    }                
+}                                                                                
+
+foreach($arResult["ITEMS"] as $i => $arItem) {
+    foreach($arProizvoditelEnumID as $proizvditelID => $proizvoditelEnumID) {
+        if($arItem['ID'] == $proizvditelID) {
+            $arResult["ELEMENTS"][$arItem['ID']]["PROPERTIES"]["PROIZVODITEL"]["VALUE_ENUM_ID"] = $proizvoditelEnumID;   
+        }                                                                    
+    }                                                                      
+}  
+?>
