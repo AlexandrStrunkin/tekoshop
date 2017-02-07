@@ -111,7 +111,6 @@ $arOfferProps = implode(';', $arParams['OFFERS_CART_PROPERTIES']);
 
 $min_price_id = 0;
 list($min_price, $old_price, $region_price, $bManufacturerPrice) = GetItemPrices($arResult["PRICES"], $arResult["IBLOCK_ID"], $arResult["PROPERTIES"]["PROIZVODITEL"]["VALUE_ENUM_ID"]);
-
 // save item viewed
 $arFirstPhoto = reset($arResult['MORE_PHOTO']);
 $arViewedData = array(
@@ -406,7 +405,7 @@ setViewedProduct(<?=$arResult['ID']?>, <?=CUtil::PhpToJSObject($arViewedData, fa
                             <?endif;?>
                             <?if($old_price && $old_price["VALUE"] != $min_price["VALUE"]):?>
                                 <div class="price_name"><?=($bManufacturerPrice ? 'Цена производителя' : 'Розничная цена')?></div>
-                                <div class="price discount"><strike><?=$old_price["PRINT_VALUE"]?><?=($arParams["SHOW_MEASURE"] === "Y" && $strMeasure ? '/'.$strMeasure : '')?></strike></div>
+                                <div class="price discount"><?=$old_price["PRINT_VALUE"]?><?=($arParams["SHOW_MEASURE"] === "Y" && $strMeasure ? '/'.$strMeasure : '')?></div>
                             <?endif;?>
                         <?}?>
                     </div>

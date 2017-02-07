@@ -45,7 +45,7 @@ foreach($arResult["CATEGORIES"] as $category_id => $arCategory)
 		}
 	}
 }
-
+            
 if (!empty($arResult["ELEMENTS"]) && CModule::IncludeModule("iblock")){
 	/*convert currency*/
 	$arConvertParams = array();
@@ -164,7 +164,7 @@ foreach($arResult["SEARCH"] as $i=>$arItem)
 	}
 
 	$arResult["SEARCH"][$i]["ICON"] = true;
-}
+}             
                                               
 foreach($arResult["CATEGORIES"] as $category_id => $arCategory) {
     foreach($arCategory["ITEMS"] as $i => $arItem) { 
