@@ -523,11 +523,12 @@
     background: url(images/sprite.png) no-repeat center -54px;
 }
 .bx-soa-pickup-list-item .bx-soa-pickup-l-item-detail {
+    padding-top:20px;
     padding-left: 100px;
     position: relative;
     min-height: 80px;
 }
-.bx-soa-pickup-list-item.bx-selected .bx-soa-pickup-l-item-detail {display: block;}
+.bx-soa-pickup-list-item.bx-selected .bx-soa-pickup-l-item-detail {display: block; padding-top:20px;}
 .bx-soa-pickup-l-item-detail {
     padding-left: 100px;
     position: relative;
@@ -538,7 +539,7 @@
 
 .bx-soa-pickup-l-item-btn {
     padding-left: 100px;
-    padding-top: 10px;
+    padding-top: 0px;
     float: none;
     position: relative;
     top: auto;
@@ -547,7 +548,7 @@
 }
 .bx-soa-pickup-list-item.bx-selected .bx-soa-pickup-l-item-btn {
     padding-left: 100px;
-    padding-top: 10px;
+    padding-top: 0px;
     float: none;
     position: relative;
     top: auto;
