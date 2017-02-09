@@ -13,22 +13,22 @@ global $regionPriceCODE;
 <div class="std"><div class="clear"></div>
 <h1>Готовые комплекты систем видеонаблюдения и безопасности</h1>
 <?$APPLICATION->IncludeComponent(
-	"bitrix:menu", 
-	"vertical_multilevel_tekobiz", 
-	array(
-		"ROOT_MENU_TYPE" => "sub",
-		"MENU_CACHE_TYPE" => "N",
-		"MENU_CACHE_TIME" => "3600",
-		"MENU_CACHE_USE_GROUPS" => "Y",
-		"MENU_CACHE_GET_VARS" => array(
-		),
-		"MAX_LEVEL" => "2",
-		"CHILD_MENU_TYPE" => "sub",
-		"USE_EXT" => "N",
-		"DELAY" => "N",
-		"ALLOW_MULTI_SELECT" => "N"
-	),
-	false
+    "bitrix:menu", 
+    "vertical_multilevel_tekobiz", 
+    array(
+        "ROOT_MENU_TYPE" => "sub",
+        "MENU_CACHE_TYPE" => "N",
+        "MENU_CACHE_TIME" => "3600",
+        "MENU_CACHE_USE_GROUPS" => "Y",
+        "MENU_CACHE_GET_VARS" => array(
+        ),
+        "MAX_LEVEL" => "2",
+        "CHILD_MENU_TYPE" => "sub",
+        "USE_EXT" => "N",
+        "DELAY" => "N",
+        "ALLOW_MULTI_SELECT" => "N"
+    ),
+    false
 );?>
 
 <?include($_SERVER["DOCUMENT_ROOT"].'/include/setsSlider.php')?>
