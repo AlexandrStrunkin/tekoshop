@@ -23,7 +23,7 @@ global $regionPriceCODE;
 	"CACHE_TIME" => "36000",
 	"CACHE_FILTER" => "N",
 	"CACHE_GROUPS" => "Y",
-	"SET_TITLE" => "N",
+	"SET_TITLE" => "Y",
 	"SET_STATUS_404" => "Y",
 	"USE_FILTER" => "N",
 	"USE_REVIEW" => "N",
