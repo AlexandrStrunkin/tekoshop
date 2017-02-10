@@ -4611,21 +4611,6 @@ BX.namespace('BX.Sale.OrderAjaxComponent');
 					children: [BX.create('DIV', {props: {className: 'bx-soa-pp-company-desc'}, html: currentPaySystem.DESCRIPTION})]
 				});
 
-				if (currentPaySystem.PRICE && parseFloat(currentPaySystem.PRICE) > 0)
-				{
-					price = BX.create('UL', {
-						props: {className: 'bx-soa-pp-list'},
-						children: [
-							BX.create('LI', {
-								children: [
-									BX.create('DIV', {props: {className: 'bx-soa-pp-list-termin'}, text: this.params.MESS_PRICE + ':'}),
-									BX.create('DIV', {props: {className: 'bx-soa-pp-list-description'}, text: '~' + currentPaySystem.PRICE_FORMATTED})
-								]
-							})
-						]
-					});
-				}
-
 				extPs = BX.create('DIV', {children: [subTitle, label, title, price]});
 			}
 
@@ -4987,7 +4972,12 @@ BX.namespace('BX.Sale.OrderAjaxComponent');
 				children: [BX.create('DIV', {props: {className: 'bx-soa-pp-company-desc'}, html: currentDelivery.DESCRIPTION})]
 			});
 
-			if (currentDelivery.PRICE >= 0)
+            //----------------------//
+            //Скрываем стоимость доставки
+            //Переменная delivery_no_price_ID задаётся в template.php
+            //----------------------//         
+            
+			if (currentDelivery.ID != delivery_no_price_ID && currentDelivery.PRICE >= 0)
 			{
 				price = BX.create('LI', {
 					children: [
@@ -5183,8 +5173,13 @@ BX.namespace('BX.Sale.OrderAjaxComponent');
 				logoNode.setAttribute('style', 'background-image: url(' + logotype + ');');
 			}
 			labelNodes.push(logoNode);
-
-			if (item.PRICE >= 0 || typeof item.DELIVERY_DISCOUNT_PRICE !== 'undefined')
+            
+            //--------------------------//
+            //Скрываем стоимость доставки
+            //Переменная delivery_no_price_ID задаётся в template.php
+            //--------------------------// 
+             
+			if (item.ID != delivery_no_price_ID && (item.PRICE >= 0 || typeof item.DELIVERY_DISCOUNT_PRICE !== 'undefined'))
 			{
 				labelNodes.push(
 					BX.create('DIV', {
@@ -5194,7 +5189,7 @@ BX.namespace('BX.Sale.OrderAjaxComponent');
 							: item.PRICE_FORMATED})
 				);
 			}
-			else if (deliveryCached && (deliveryCached.PRICE >= 0 || typeof deliveryCached.DELIVERY_DISCOUNT_PRICE !== 'undefined'))
+			else if (item.ID != delivery_no_price_ID && deliveryCached && (deliveryCached.PRICE >= 0 || typeof deliveryCached.DELIVERY_DISCOUNT_PRICE !== 'undefined'))
 			{
 				labelNodes.push(
 					BX.create('DIV', {
@@ -5283,12 +5278,27 @@ BX.namespace('BX.Sale.OrderAjaxComponent');
 						children: arNodes
 					})
 				);
-				node.appendChild(
-					BX.create('DIV', {
-						props: {className: 'col-sm-3 bx-soa-pp-price'},
-						children: this.getDeliveryPriceNodes(selectedDelivery)
-					})
-				);
+                
+                //-------------------------//
+                //Скрываем стоимость доставки
+                //Переменная delivery_no_price_ID задаётся в template.php
+                //-------------------------//                
+                
+                if (selectedDelivery.ID == delivery_no_price_ID) {
+				    node.appendChild(
+					    BX.create('DIV', {
+						    props: {className: 'col-sm-3 bx-soa-pp-price'},
+						    children: ''
+					    })
+				    );
+                } else {
+                    node.appendChild(
+                        BX.create('DIV', {
+                            props: {className: 'col-sm-3 bx-soa-pp-price'},
+                            children: this.getDeliveryPriceNodes(selectedDelivery)
+                        })
+                    );    
+                }
 			}
 			else
 				node.appendChild(BX.create('STRONG', {text: BX.message('SOA_DELIVERY_SELECT_ERROR')}));
@@ -7544,7 +7554,11 @@ BX.namespace('BX.Sale.OrderAjaxComponent');
 			deliveryError = curDelivery && curDelivery.CALCULATE_ERRORS && curDelivery.CALCULATE_ERRORS.length;
 			deliveryValue = deliveryError ? BX.message('SOA_NOT_CALCULATED') : total.DELIVERY_PRICE_FORMATED;
 
-			if (parseFloat(total.DELIVERY_PRICE) >= 0 && this.result.DELIVERY.length)
+            //--------------------------------//   
+            //Скрываем стоимость доставки стоимостью 0  
+            //--------------------------------//                                
+            
+			if (parseFloat(total.DELIVERY_PRICE) > 0 && this.result.DELIVERY.length)
 				this.totalInfoBlockNode.appendChild(this.createTotalUnit(BX.message('SOA_SUM_DELIVERY'), deliveryValue, {error: deliveryError}));
 
 			if (this.options.showPayedFromInnerBudget)
@@ -7621,7 +7635,7 @@ BX.namespace('BX.Sale.OrderAjaxComponent');
 			}
 			else
 				totalValue = [value];
-
+                 
 			return BX.create('DIV', {
 				props: {className: 'bx-soa-cart-total-line' + (!!params.total ? ' bx-soa-cart-total-line-total' : '')},
 				children: [
@@ -7633,7 +7647,7 @@ BX.namespace('BX.Sale.OrderAjaxComponent');
 						children: totalValue
 					})
 				]
-			});
+			}); 
 		},
 
 		basketBlockScrollCheckEvent: function(e)
