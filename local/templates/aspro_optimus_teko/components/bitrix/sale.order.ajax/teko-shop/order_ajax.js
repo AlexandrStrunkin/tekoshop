@@ -4974,7 +4974,7 @@ BX.namespace('BX.Sale.OrderAjaxComponent');
 
             //----------------------//
             //Скрываем стоимость доставки
-            //Переменная delivery_no_price_ID пишется в js
+            //Переменная delivery_no_price_ID задаётся в template.php
             //----------------------//         
             
 			if (currentDelivery.ID != delivery_no_price_ID && currentDelivery.PRICE >= 0)
@@ -5176,7 +5176,7 @@ BX.namespace('BX.Sale.OrderAjaxComponent');
             
             //--------------------------//
             //Скрываем стоимость доставки
-            //Переменная delivery_no_price_ID пишется в js
+            //Переменная delivery_no_price_ID задаётся в template.php
             //--------------------------// 
              
 			if (item.ID != delivery_no_price_ID && (item.PRICE >= 0 || typeof item.DELIVERY_DISCOUNT_PRICE !== 'undefined'))
@@ -5189,7 +5189,7 @@ BX.namespace('BX.Sale.OrderAjaxComponent');
 							: item.PRICE_FORMATED})
 				);
 			}
-			else if (item.ID != 3 && deliveryCached && (deliveryCached.PRICE >= 0 || typeof deliveryCached.DELIVERY_DISCOUNT_PRICE !== 'undefined'))
+			else if (item.ID != delivery_no_price_ID && deliveryCached && (deliveryCached.PRICE >= 0 || typeof deliveryCached.DELIVERY_DISCOUNT_PRICE !== 'undefined'))
 			{
 				labelNodes.push(
 					BX.create('DIV', {
@@ -5281,7 +5281,7 @@ BX.namespace('BX.Sale.OrderAjaxComponent');
                 
                 //-------------------------//
                 //Скрываем стоимость доставки
-                //Переменная delivery_no_price_ID пишется в js
+                //Переменная delivery_no_price_ID задаётся в template.php
                 //-------------------------//                
                 
                 if (selectedDelivery.ID == delivery_no_price_ID) {
@@ -7556,8 +7556,7 @@ BX.namespace('BX.Sale.OrderAjaxComponent');
 
             //--------------------------------//   
             //Скрываем стоимость доставки стоимостью 0  
-            //--------------------------------//     
-                          
+            //--------------------------------//                                
             
 			if (parseFloat(total.DELIVERY_PRICE) > 0 && this.result.DELIVERY.length)
 				this.totalInfoBlockNode.appendChild(this.createTotalUnit(BX.message('SOA_SUM_DELIVERY'), deliveryValue, {error: deliveryError}));
