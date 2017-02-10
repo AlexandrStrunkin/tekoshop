@@ -113,7 +113,7 @@ if ($arParams['USE_CUSTOM_ERROR_MESSAGES'] != 'Y')
 	$arParams['MESS_FAIL_PRELOAD_TEXT'] = Loc::getMessage('FAIL_PRELOAD_TEXT_DEFAULT');
 	$arParams['MESS_DELIVERY_CALC_ERROR_TITLE'] = Loc::getMessage('DELIVERY_CALC_ERROR_TITLE_DEFAULT');
 	$arParams['MESS_DELIVERY_CALC_ERROR_TEXT'] = Loc::getMessage('DELIVERY_CALC_ERROR_TEXT_DEFAULT');
-}
+}     
 
 $scheme = $request->isHttps() ? 'https' : 'http';
 switch (LANGUAGE_ID)
@@ -383,8 +383,8 @@ else
 	$signedParams = $signer->sign(base64_encode(serialize($arParams)), 'sale.order.ajax');
 	$messages = Loc::loadLanguageFile(__FILE__);
 	?>
-
 	<script type="text/javascript">
+        delivery_no_price_ID = <?=DELIVERY_NO_PRICE_ID?>;
 		BX.message(<?=CUtil::PhpToJSObject($messages)?>);
 		BX.Sale.OrderAjaxComponent.init({
 			result: <?=CUtil::PhpToJSObject($arResult['JS_DATA'])?>,
