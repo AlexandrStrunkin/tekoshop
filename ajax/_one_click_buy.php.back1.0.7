@@ -9,7 +9,6 @@
 		"CACHE_TYPE" => "Y",
 		"CACHE_TIME" => "3600000",
 		"CACHE_GROUPS" => "N",
-		"SHOW_DELIVERY_NOTE" => COption::GetOptionString('aspro.optimus', 'ONECLICKBUY_SHOW_DELIVERY_NOTE', 'N', SITE_ID),
 		"PROPERTIES" => (strlen($tmp = COption::GetOptionString('aspro.optimus', 'ONECLICKBUY_PROPERTIES', 'FIO,PHONE,EMAIL,COMMENT', SITE_ID)) ? explode(',', $tmp) : array()),
 		"REQUIRED" => (strlen($tmp = COption::GetOptionString('aspro.optimus', 'ONECLICKBUY_REQUIRED_PROPERTIES', 'FIO,PHONE', SITE_ID)) ? explode(',', $tmp) : array()),
 		"DEFAULT_PERSON_TYPE" => COption::GetOptionString('aspro.optimus', 'ONECLICKBUY_PERSON_TYPE', '1', SITE_ID),
