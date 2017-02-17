@@ -149,17 +149,16 @@ $arUrlRewrite = array(
 		"SORT" => "100",
 	),
 	array(
-		"CONDITION" => "#^/services/#",
-		"RULE" => "",
-		"ID" => "bitrix:news",
-		"PATH" => "/services/index.php",
-		"SORT" => "100",
-	),
-	array(
 		"CONDITION" => "#^/personal/#",
 		"RULE" => "",
 		"ID" => "bitrix:sale.personal.section",
 		"PATH" => "/personal/index.php",
+	),
+	array(
+		"CONDITION" => "#^/services/#",
+		"RULE" => "",
+		"ID" => "bitrix:news",
+		"PATH" => "/services/index.php",
 		"SORT" => "100",
 	),
 	array(
