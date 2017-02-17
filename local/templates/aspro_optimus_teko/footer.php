@@ -110,7 +110,7 @@
 													<span class="phone_wrap">
 														<span class="icons fa fa-phone"></span>
 														<span>
-															<?$phone = $currentLocation['PHONE'] ? $currentLocation['PHONE'] : '+7 (843) 299-77-33';?>
+															<?$phone = $currentLocation['PHONE'] ? $currentLocation['PHONE'] : '8 (843) 212-22-55<br>8 (843) 212-22-66';?>
 															<a href="<?=$phone?>" rel="nofollow"><?=$phone?></a>
 															<?/*$APPLICATION->IncludeComponent("bitrix:main.include", ".default",
 																array(

@@ -79,3 +79,24 @@ git add --a
 git commit -m "fix order page"
 git push origin master
 git pull origin master
+ды
+ls
+git pull origin master
+git add --a
+git commit -m "include area upd"
+git pull origin master
+git add --a
+git commit -m "resolve conflict"
+git push origin master
+git status
+git add --a
+git commit -m "SUP-5857: update cache settings in catalog.top"
+git push origin master
+git pull origin master
+cd /home/bitrix/ext_www/teko-shop.ru
+git status
+ды
+ls
+git pull origin master
+cd /home/bitrix/ext_www/teko-shop.ru
+git status
