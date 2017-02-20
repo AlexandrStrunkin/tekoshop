@@ -2696,7 +2696,7 @@ body .contacts_right blockquote{margin:39px 0 34px;}
 /*stores block*/
 .stores_block_wrap .stores_block .stores_text_wrapp.image_block .imgs { width: 100px; /*height: 100px;*/ display: inline-block; vertical-align: top; margin: 0px 0px 0px; float: left; text-align: center; }
 .stores_block_wrap .stores_block .stores_text_wrapp.image_block .imgs img { vertical-align: middle; }
-.stores_block_wrap .stores_block .stores_text_wrapp .main_info { max-width: 680px; }   
+.stores_block_wrap .stores_block .stores_text_wrapp .main_info { max-width: 680px; }
 .stores_block_wrap .stores_block .stores_text_wrapp.image_block .main_info { width: 100%; margin: 0px 0px 0px 120px; max-width: auto; }
 .stores_block_wrap .stores_block .stores_text_wrapp.image_block .main_info > span { display: block; padding: 0px; max-width: 300px; }
 .stores_block_wrap .stores_block .stores_text_wrapp span.p10 { padding: 0px 0px 0px 5px; }
@@ -3312,7 +3312,7 @@ div[class*=bx-sls] .bx-ui-sls-clear:hover:before{background-position:-82px -82px
 .personal_wrapper .col-md-6{width: 50%;}
 .personal_wrapper .col-md-5{width: 41.66666667%;}
 .personal_wrapper .col-md-4{width: 33.33%;}
-.personal_wrapper .col-md-3{width: 25%;}
+.personal_wrapper .col-md-3{width: 23%;}
 .personal_wrapper .col-md-2{width: 16.66666667%;}
 .personal_wrapper .col-md-1{width: 8.33333333%;}
 .personal_wrapper .col-md-offset-5{/*margin-left: 41.66666667%;*/}
