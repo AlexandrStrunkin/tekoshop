@@ -3313,7 +3313,7 @@ div[class*=bx-sls] .bx-ui-sls-clear:hover:before{background-position:-82px -82px
 .personal_wrapper .col-md-5{width: 41.66666667%;}
 .personal_wrapper .col-md-4{width: 33.33%;}
 .personal_wrapper .col-md-3{width: 23%;}
-.personal_wrapper .col-md-2{width: 16.66666667%;}
+.personal_wrapper .col-md-2{width: 15%;}
 .personal_wrapper .col-md-1{width: 8.33333333%;}
 .personal_wrapper .col-md-offset-5{/*margin-left: 41.66666667%;*/}
 .personal_wrapper .col-md-offset-3{/*margin-left: 25%;*/}
@@ -3423,7 +3423,7 @@ div[class*=bx-sls] .bx-ui-sls-clear:hover:before{background-position:-82px -82px
 .sale-order-detail-payment-options-methods-image-element, .sale-order-detail-payment-options-shipment-image-element{background-size:auto;border: 1px solid #e5e5e5;}
 
 .personal_wrapper .orders_wrapper .sale-order-detail-about-order-inner-container-status{width: 30.3%;}
-.personal_wrapper .orders_wrapper .sale-order-detail-about-order-inner-container-repeat{width: 19.66666667%;}
+.personal_wrapper .orders_wrapper .sale-order-detail-about-order-inner-container-repeat{width: 19%;}
 
 .personal_wrapper .sale-order-detail-payment-options-methods-info-title, .personal_wrapper .sale-order-detail-payment-options-methods-shipment-list-item-title, .personal_wrapper .sale-order-payment-change-payment-title{font-family: Ubuntu, Arial, Helvetica, sans-serif;font-weight: 500;color: #383838;font-size:15px;}
 .sale-order-detail-payment-options-methods-info-total-price{font-family: Ubuntu, Arial, Helvetica, sans-serif;font-weight:400;font-size:13px;}

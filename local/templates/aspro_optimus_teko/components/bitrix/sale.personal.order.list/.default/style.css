@@ -513,3 +513,9 @@ div.sale-order-list-repeat-container {
 		float: none;
 	}
 }
+.personal_wrapper .orders_wrapper .sale-order-detail-about-order-inner-container-repeat{
+    width: 18%;
+}
+.personal_wrapper .col-md-2{
+    width: 15%;
+}
