@@ -28,6 +28,16 @@ $htmlClass = ($_REQUEST && isset($_REQUEST['print']) ? 'print' : false);
 		<?if(!CModule::IncludeModule("aspro.optimus")){?><center><?$APPLICATION->IncludeFile(SITE_DIR."include/error_include_module.php");?></center></body></html><?die();?><?}?>
 		<?$APPLICATION->IncludeComponent("aspro:theme.optimus", ".default", array("COMPONENT_TEMPLATE" => ".default"), false);?>
 		<?COptimus::SetJSOptions();?>
+        <?
+        $arBackgroundImage = checkBackgroundImage('s1');
+        if ($arBackgroundImage) {
+            if ($arBackgroundImage['PROPERTY_LEFT_BACKGROUND_BUTTON_VALUE']) {?>        
+                <a class="left_background_button" href="<?=$arBanner['PROPERTY_LEFT_BACKGROUND_BUTTON_VALUE']?>"></a>
+            <?}
+            if ($arBackgroundImage['PROPERTY_RIGHT_BACKGROUND_BUTTON_VALUE']) {?>        
+                <a class="right_background_button" href="<?=$arBanner['PROPERTY_RIGHT_BACKGROUND_BUTTON_VALUE']?>"></a>
+            <?}
+        }?>        
 		<div class="wrapper <?=(COptimus::getCurrentPageClass());?> basket_<?=strToLower($TEMPLATE_OPTIONS["BASKET"]["CURRENT_VALUE"]);?> <?=strToLower($TEMPLATE_OPTIONS["MENU_COLOR"]["CURRENT_VALUE"]);?> banner_auto">
 			<div class="header_wrap <?=strtolower($TEMPLATE_OPTIONS["HEAD_COLOR"]["CURRENT_VALUE"])?>">
 				<?if($TEMPLATE_OPTIONS["BASKET"]["CURRENT_VALUE"]=="NORMAL"){?>
