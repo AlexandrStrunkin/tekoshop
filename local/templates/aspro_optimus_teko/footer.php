@@ -169,8 +169,7 @@
 					<?$APPLICATION->IncludeFile(SITE_DIR."include/bottom_include2.php", Array(), Array("MODE" => "text", "NAME" => GetMessage("ARBITRARY_2"))); ?>
 				</div>
 			</div>
-		</footer>
-		<?
+		</footer><?          
 		COptimus::setFooterTitle();
 		COptimus::showFooterBasket();
 		?>

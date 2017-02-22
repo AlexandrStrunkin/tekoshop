@@ -114,6 +114,37 @@ font.notetext{color:#333;}
 .bg_image_site{display:block;opacity:0;width:100%;height:100%;min-height:100%;min-width:100%;position: absolute;top: 0px;left:0px;right:0px;z-index:0;background-position:top center;background-repeat:no-repeat;}
 .bg_image_site.fixed{position:fixed;}
 .bg_image_site.opacity{transition:opacity 0.4s ease;}
+.left_background_button {
+    display: block;
+    width: 134px;
+    height: 44px;      
+    position: fixed;
+    top: 784px;
+    left: 50%;
+    z-index: 100;
+    margin-left: -852px;
+    border-radius: 9px;
+}
+.left_background_button:hover {
+    background: #ffff47;
+    opacity: 0.2;
+}
+.right_background_button {
+    display: block;
+    width: 134px;
+    height: 44px;       
+    position: fixed;
+    top: 784px;
+    left: 50%;
+    z-index: 100;
+    margin-left: 712px;
+    border-radius: 9px;
+}
+
+.right_background_button:hover {
+    background: #ffff47;
+    opacity: 0.2;
+}
 
 /* INPUTS */
 input::-webkit-input-placeholder, input::-moz-input-placeholder, input::-ms-input-placeholder, input::-o-input-placeholder{color:#6a6a6a;}
@@ -3313,7 +3344,7 @@ div[class*=bx-sls] .bx-ui-sls-clear:hover:before{background-position:-82px -82px
 .personal_wrapper .col-md-5{width: 41.66666667%;}
 .personal_wrapper .col-md-4{width: 33.33%;}
 .personal_wrapper .col-md-3{width: 23%;}
-.personal_wrapper .col-md-2{width: 15%;}
+.personal_wrapper .col-md-2{width: 16.66666667%;}
 .personal_wrapper .col-md-1{width: 8.33333333%;}
 .personal_wrapper .col-md-offset-5{/*margin-left: 41.66666667%;*/}
 .personal_wrapper .col-md-offset-3{/*margin-left: 25%;*/}
@@ -3423,7 +3454,7 @@ div[class*=bx-sls] .bx-ui-sls-clear:hover:before{background-position:-82px -82px
 .sale-order-detail-payment-options-methods-image-element, .sale-order-detail-payment-options-shipment-image-element{background-size:auto;border: 1px solid #e5e5e5;}
 
 .personal_wrapper .orders_wrapper .sale-order-detail-about-order-inner-container-status{width: 30.3%;}
-.personal_wrapper .orders_wrapper .sale-order-detail-about-order-inner-container-repeat{width: 19%;}
+.personal_wrapper .orders_wrapper .sale-order-detail-about-order-inner-container-repeat{width: 19.66666667%;}
 
 .personal_wrapper .sale-order-detail-payment-options-methods-info-title, .personal_wrapper .sale-order-detail-payment-options-methods-shipment-list-item-title, .personal_wrapper .sale-order-payment-change-payment-title{font-family: Ubuntu, Arial, Helvetica, sans-serif;font-weight: 500;color: #383838;font-size:15px;}
 .sale-order-detail-payment-options-methods-info-total-price{font-family: Ubuntu, Arial, Helvetica, sans-serif;font-weight:400;font-size:13px;}

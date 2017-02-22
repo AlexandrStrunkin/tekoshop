@@ -1732,3 +1732,54 @@ function clean_expire_cache($path = "") {
     }
 }
 
+//Функция получения информации о фоновых изображениях на сайте
+function checkBackgroundImage($siteID){
+    global $APPLICATION;
+    static $arBanner;
+    if($arBanner===NULL){
+        $arItems = COptimusCache::CIBLockElement_GetList(array("SORT" => "ASC", 'CACHE' => array('TAG' => COptimusCache::GetIBlockCacheTag(COptimusCache::$arIBlocks[$siteID]["aspro_optimus_adv"]["aspro_optimus_bg_images"][0]))), array('IBLOCK_ID' => COptimusCache::$arIBlocks[$siteID]["aspro_optimus_adv"]["aspro_optimus_bg_images"][0], "ACTIVE"=>"Y"), false, false, array("ID", "NAME", "PREVIEW_PICTURE", "PROPERTY_URL", "PROPERTY_FIXED_BANNER", "PROPERTY_URL_NOT_SHOW", "PROPERTY_LEFT_BACKGROUND_BUTTON", "PROPERTY_RIGHT_BACKGROUND_BUTTON"));
+        $arBanner=array();
+        if($arItems){
+            $curPage=$APPLICATION->GetCurPage(); 
+            foreach($arItems as $arItem){
+                if(isset($arItem["PROPERTY_URL_VALUE"]) && $arItem["PREVIEW_PICTURE"]){
+                    if(!is_array($arItem["PROPERTY_URL_VALUE"]))
+                        $arItem["PROPERTY_URL_VALUE"]=array($arItem["PROPERTY_URL_VALUE"]);
+                    if($arItem["PROPERTY_URL_VALUE"]){
+                        foreach($arItem["PROPERTY_URL_VALUE"] as $url){
+                            $url=str_replace("SITE_DIR", SITE_DIR, $url);
+                            if($arItem["PROPERTY_URL_NOT_SHOW_VALUE"]){
+                                if(!is_array($arItem["PROPERTY_URL_NOT_SHOW_VALUE"]))
+                                    $arItem["PROPERTY_URL_NOT_SHOW_VALUE"]=array($arItem["PROPERTY_URL_NOT_SHOW_VALUE"]);
+                                foreach($arItem["PROPERTY_URL_NOT_SHOW_VALUE"] as $url_not_show){
+                                    $url_not_show=str_replace("SITE_DIR", SITE_DIR, $url_not_show);
+                                    if(CSite::InDir($url_not_show)){
+                                        break 2;
+                                    }
+                                }
+                                foreach($arItem["PROPERTY_URL_NOT_SHOW_VALUE"] as $url_not_show){
+                                    $url_not_show=str_replace("SITE_DIR", SITE_DIR, $url_not_show);
+                                    if(CSite::InDir($url_not_show)){
+                                        // continue;
+                                        break 2;
+                                    }else{
+                                        if(CSite::InDir($url)){
+                                            $arBanner=$arItem;
+                                            break;
+                                        }
+                                    }
+                                }
+                            }else{
+                                if(CSite::InDir($url)){
+                                    $arBanner=$arItem;
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    return $arBanner;
+}
