@@ -230,7 +230,7 @@ else
 										}
 										?>
 									</div>
-									<?
+									<? 
 									if ($payment['PAID'] === 'N' && $payment['IS_CASH'] !== 'Y' && $order['ORDER']['STATUS_ID'] !== 'N')
 									{
 										if ($payment['NEW_WINDOW'] === 'Y')
