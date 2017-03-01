@@ -100,3 +100,11 @@ ls
 git pull origin master
 cd /home/bitrix/ext_www/teko-shop.ru
 git status
+ls
+git pull origin master
+пше pull origin master
+git pull origin master
+cd /home/bitrix/ext_www/teko-shop.ru
+git status
+пше pull origin master
+git pull origin master
