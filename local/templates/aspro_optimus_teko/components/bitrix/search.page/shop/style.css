@@ -44,3 +44,40 @@ div.search-advanced, div.search-item-meta, div.search-item-meta a { color: #8a8a
 div.search-sorting b { background: #e8e9ec; }
 
 .search-item-rate {font-size: 11px;}
+
+.item_block.col-3{
+    width:31%;
+    display: inline-block;
+    vertical-align: top;
+    padding: 6px 6px;
+}
+.item_block .catalog_item_wrapp {
+    white-space: normal;
+    vertical-align: top;
+}
+.counter_wrapp .counter_block {
+    margin: 0px 10px 0px 0px;
+}
+.counter_block {
+    box-sizing: border-box;
+    border: 1px solid #e5e5e5;
+    font-size: 0px;
+    width: 84px;
+    margin: 0px auto;
+    display: inline-block;
+    vertical-align: top;
+    border-radius: 2px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    height: 30px;
+}
+.footer_button .counter_wrapp .button_block.wide {
+    display: inline-block;
+    vertical-align: top;
+    width: auto;
+}
