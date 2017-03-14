@@ -108,3 +108,19 @@ cd /home/bitrix/ext_www/teko-shop.ru
 git status
 пше pull origin master
 git pull origin master
+cd /home/bitrix/ext_www/teko-shop.ru
+git status
+git add --a
+git commit -m '01.03 work updates'
+git push origin master
+ls
+git status
+clear
+git pull origin master
+clear
+Hn4j2klso&e
+tekosupport
+Hn4j2klso&e
+git status
+пше pull origin master
+git pull origin master

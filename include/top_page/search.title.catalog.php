@@ -1,5 +1,8 @@
-<?$APPLICATION->IncludeComponent("bitrix:search.title", "catalog", array(
-	"CATEGORY_0" => array(
+<?$APPLICATION->IncludeComponent(
+	"bitrix:search.title", 
+	"catalog", 
+	array(
+		"CATEGORY_0" => array(
 			0 => "iblock_catalog",
 		),
 		"CATEGORY_0_TITLE" => GetMessage("CATEGORY_PRODUСTCS_SEARCH_NAME"),
@@ -54,6 +57,6 @@
 	),
 	false,
 	array(
-	"ACTIVE_COMPONENT" => "Y"
+		"ACTIVE_COMPONENT" => "Y"
 	)
 );?>

@@ -41,7 +41,7 @@
 						<ul class="dropdown">
 							<?foreach($arItem["CHILD"] as $arChildItem){?>
 								<li class="full <?if($arChildItem["SELECTED"]){?> current <?}?>">
-									<a class="icons_fa <?=($arChildItem["CHILD"] ? "parent" : "");?>" href="<?=($arChildItem["SECTION_PAGE_URL"] ? $arChildItem["SECTION_PAGE_URL"] : $arChildItem["LINK"] );?>"><?=($arChildItem["NAME"] ? $arChildItem["NAME"] : $arChildItem["TEXT"] );?></a>
+									<a class="icons_fa <?=($arChildItem["CHILD"] ? "parent" : "");?>" href="<?=($arChildItem["SECTION_PAGE_URL"] ? "/catalog/".$arChildItem["CODE"]."/" : $arChildItem["LINK"] );?>"><?=($arChildItem["NAME"] ? $arChildItem["NAME"] : $arChildItem["TEXT"] );?></a>
 								</li>
 							<?}?>
 						</ul>
