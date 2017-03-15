@@ -413,7 +413,7 @@ endif;?>
 
 
                                     <? if($arItem['QUANTITY'] > 0) { ?>
-                                        <div class="item-stock"><span class="icon stock"></span><span class="value"><?=$arQuantityData["OPTIONS"]["EXPRESSION_FOR_EXISTS"]?> (<?=$arItem['QUANTITY']?>)</span></div>
+                                        <div class="item-stock"><span class="icon stock"></span><span class="value"><?=$arQuantityData["OPTIONS"]["EXPRESSION_FOR_EXISTS"]?></span></div>
                                     <? } else { ?>
                                         <div class="item-stock"><span class="icon  order"></span><span class="value"><?=$arQuantityData["OPTIONS"]["EXPRESSION_FOR_NOTEXISTS"]?></span></div>
                                     <? } ?>
