@@ -328,6 +328,20 @@ $htmlClass = ($_REQUEST && isset($_REQUEST['print']) ? 'print' : false);
 								),
 								false
 							);?>
+                            <?
+                            if ($USER->IsAdmin()) {
+                                $APPLICATION->IncludeComponent("bitrix:main.include", ".default",
+                                    array(
+                                        "COMPONENT_TEMPLATE" => ".default",
+                                        "PATH" => SITE_DIR."include/left_block/price_list.php",
+                                        "AREA_FILE_SHOW" => "file",
+                                        "AREA_FILE_SUFFIX" => "",
+                                        "AREA_FILE_RECURSIVE" => "Y",
+                                        "EDIT_TEMPLATE" => "standard.php"
+                                    ),
+                                    false
+                                );
+                            }?>
 							<?$APPLICATION->IncludeComponent("bitrix:main.include", ".default",
 								array(
 									"COMPONENT_TEMPLATE" => ".default",
@@ -338,7 +352,7 @@ $htmlClass = ($_REQUEST && isset($_REQUEST['print']) ? 'print' : false);
 									"EDIT_TEMPLATE" => "standard.php"
 								),
 								false
-							);?>
+							);?> 
 							<?$APPLICATION->IncludeComponent("bitrix:main.include", ".default",
 								array(
 									"COMPONENT_TEMPLATE" => ".default",
@@ -350,6 +364,21 @@ $htmlClass = ($_REQUEST && isset($_REQUEST['print']) ? 'print' : false);
 								),
 								false
 							);?>
+                            <?
+                            if ($USER->IsAdmin()) {
+                                $APPLICATION->IncludeComponent("bitrix:main.include", ".default",
+                                    array(
+                                        "COMPONENT_TEMPLATE" => ".default",
+                                        "PATH" => SITE_DIR."include/left_block/comp_price_list.php",
+                                        "AREA_FILE_SHOW" => "file",
+                                        "AREA_FILE_SUFFIX" => "",
+                                        "AREA_FILE_RECURSIVE" => "Y",
+                                        "EDIT_TEMPLATE" => "standard.php"
+                                    ),
+                                    false
+                                );                                
+                            }
+                            ?>
 						</div>
 						<div class="right_block">
 					<?}?>

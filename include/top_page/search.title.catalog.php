@@ -2,7 +2,7 @@
 	"bitrix:search.title",
 	"catalog",
 	Array(
-		"CATEGORY_0" => array("iblock_catalog"),
+		"CATEGORY_0" => array("iblock_catalog"),    
 		"CATEGORY_0_TITLE" => GetMessage("CATEGORY_PRODUСTCS_SEARCH_NAME"),
 		"CATEGORY_0_iblock_aspro_optimus_catalog" => array(0=>"185",),
 		"CATEGORY_0_iblock_catalog" => array("114","115","116","117","118","119","120","123","132","171"),
@@ -27,8 +27,8 @@
 		"TOP_COUNT" => "5",
 		"USE_LANGUAGE_GUESS" => "Y"
 	),
-false,
-Array(
-	'ACTIVE_COMPONENT' => 'Y'
-)
+    false,
+    Array(
+	    'ACTIVE_COMPONENT' => 'Y'
+    )                                               
 );?>

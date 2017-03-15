@@ -64,6 +64,17 @@ header .city-select .city-popup-list-wrapper,header .city-select .city-verifier 
 .city-popup-list .cpl-bottom .cpl-clist li:before { padding-right: 10px; }
 .city-popup-list .cpl-bottom { margin-top: 20px; margin-bottom: 20px;}
 
+.priceListDownload {
+    width: 100%;
+    height: 40px;
+    background: #67af00;
+    color: #ffffff;
+    border-radius: 4px;
+    line-height: 40px;
+    text-align: center;
+    margin-bottom: 20px; 
+}
+
 .popup_button_block {text-align: center;}
 
 #footer .footer_bottom_inner .phones .icons.fa-phone{ margin-top: 0;}
