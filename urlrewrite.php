@@ -44,6 +44,13 @@ $arUrlRewrite = array(
 		"CONDITION" => "#^/contacts/stores/#",
 		"RULE" => "",
 		"ID" => "bitrix:catalog.store",
+		"PATH" => "/contacts/stores/index.php",
+		"SORT" => "100",
+	),
+	array(
+		"CONDITION" => "#^/contacts/stores/#",
+		"RULE" => "",
+		"ID" => "bitrix:catalog.store",
 		"PATH" => "/about/contacts/index.php",
 	),
 	array(
@@ -51,13 +58,6 @@ $arUrlRewrite = array(
 		"RULE" => "",
 		"ID" => "bitrix:catalog",
 		"PATH" => "/catalog/domofon/index.php",
-	),
-	array(
-		"CONDITION" => "#^/contacts/stores/#",
-		"RULE" => "",
-		"ID" => "bitrix:catalog.store",
-		"PATH" => "/contacts/stores/index.php",
-		"SORT" => "100",
 	),
 	array(
 		"CONDITION" => "#^/personal/order/#",
@@ -71,6 +71,12 @@ $arUrlRewrite = array(
 		"RULE" => "",
 		"ID" => "bitrix:news",
 		"PATH" => "/about/contacts/index.php",
+	),
+	array(
+		"CONDITION" => "#^/catalog/video/#",
+		"RULE" => "",
+		"ID" => "bitrix:catalog",
+		"PATH" => "/catalog/video/index.php",
 	),
 	array(
 		"CONDITION" => "#^/catalog/audio/#",
@@ -90,12 +96,6 @@ $arUrlRewrite = array(
 		"RULE" => "",
 		"ID" => "bitrix:catalog",
 		"PATH" => "/catalog/kabel/index.php",
-	),
-	array(
-		"CONDITION" => "#^/catalog/video/#",
-		"RULE" => "",
-		"ID" => "bitrix:catalog",
-		"PATH" => "/catalog/video/index.php",
 	),
 	array(
 		"CONDITION" => "#^/company/news/#",

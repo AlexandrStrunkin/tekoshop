@@ -1,4 +1,6 @@
 <?
+$PERM["test.php"]["*"]="D";
+$PERM["test.php"]["5"]="X";
 $PERM["catalog"]["24"]="W";
 $PERM["personal"]["24"]="W";
 $PERM["news"]["24"]="W";

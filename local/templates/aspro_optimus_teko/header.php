@@ -328,7 +328,7 @@ $htmlClass = ($_REQUEST && isset($_REQUEST['print']) ? 'print' : false);
 								),
 								false
 							);?>
-                            <?
+                            <?/*
                             if ($USER->IsAdmin()) {
                                 $APPLICATION->IncludeComponent("bitrix:main.include", ".default",
                                     array(
@@ -341,7 +341,7 @@ $htmlClass = ($_REQUEST && isset($_REQUEST['print']) ? 'print' : false);
                                     ),
                                     false
                                 );
-                            }?>
+                            }*/?>
 							<?$APPLICATION->IncludeComponent("bitrix:main.include", ".default",
 								array(
 									"COMPONENT_TEMPLATE" => ".default",
@@ -364,7 +364,7 @@ $htmlClass = ($_REQUEST && isset($_REQUEST['print']) ? 'print' : false);
 								),
 								false
 							);?>
-                            <?
+                            <?/*
                             if ($USER->IsAdmin()) {
                                 $APPLICATION->IncludeComponent("bitrix:main.include", ".default",
                                     array(
@@ -377,7 +377,7 @@ $htmlClass = ($_REQUEST && isset($_REQUEST['print']) ? 'print' : false);
                                     ),
                                     false
                                 );                                
-                            }
+                            }*/
                             ?>
 						</div>
 						<div class="right_block">

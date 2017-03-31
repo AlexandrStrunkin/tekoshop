@@ -1,4 +1,4 @@
-<?if('Y' == $arParams['USE_FILTER']):?>
+<?if('Y' == $arParams['USE_FILTER']):?>    
 	<?$APPLICATION->IncludeComponent(
 		"bitrix:catalog.smart.filter",
 		($arParams["AJAX_FILTER_CATALOG"]=="Y" ? "main_ajax" : "main"),
@@ -7,6 +7,7 @@
 			"IBLOCK_ID" => $arParams["IBLOCK_ID"],
 			"SECTION_ID" => (isset($arSection["ID"]) ? $arSection["ID"] : ''),
 			"FILTER_NAME" => $arParams["FILTER_NAME"],
+            "FILTER_PROPERTY_CODE" => $arParams["FILTER_PROPERTY_CODE"],
 			"PRICE_CODE" => $arParams["FILTER_PRICE_CODE"],
 			"CACHE_TYPE" => $arParams["CACHE_TYPE"],
 			"CACHE_TIME" => $arParams["CACHE_TIME"],
@@ -27,5 +28,5 @@
 			"HIDE_NOT_AVAILABLE" => $arParams["HIDE_NOT_AVAILABLE"],
 		),
 		$component);
-	?>
+	?>    
 <?endif;?>

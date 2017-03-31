@@ -124,3 +124,28 @@ Hn4j2klso&e
 git status
 пше pull origin master
 git pull origin master
+git add --a
+git commit -m "local updates 14.03.2017"
+git pull origin master
+git add --a
+git commit -m "fix conflict in search.title"
+git push origin master
+git pull origin master
+ls
+pwd
+passwd
+passwd tekosupport
+su
+passwd tekosupport
+su
+su 5nv#Rm2(
+su
+id bitrix
+passwd tekosupport
+su
+ls
+pwd
+cd /
+find / -name *barier*
+sudo find / -name *barier*
+su
