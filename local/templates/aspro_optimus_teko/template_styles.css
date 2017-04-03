@@ -3570,6 +3570,68 @@ input.form-control{margin-bottom:0px;}
 .personal_wrapper .sale-order-payment-change-pp input[type=submit]{background:#ddd;color:#fff !important;border: 1px solid #0000;}
 .personal_wrapper .sale-personal-profile-btn-block input[type=submit]{margin:0px 1px 0px 0px;}
 
+.teko_available_block {
+    display: inline-block;
+    font-size: 12px;
+    line-height: 13px;
+    width: 120px;
+    vertical-align: top;
+    height: 16px; 
+    cursor: pointer;      
+}
+
+.teko_available_block label {   
+    cursor: pointer;   
+}
+
+.teko_available_block input[type="checkbox"] + label:after {
+    font-size: 0;
+    content: ".";
+    display: block;
+    height: 13px;
+    width: 13px;
+    position: absolute;
+    left: 555px;
+    top: 1px;
+    background: url(images/input_icons.png) 0px -19px no-repeat;
+    z-index: 2;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+}
+
+.teko_available_block input[type="checkbox"] + label:before {
+    font-size: 0;
+    content: ".";
+    display: block;
+    height: 13px;
+    width: 13px;
+    position: absolute;
+    left: 555px;
+    top: 1px;
+    background: url(images/input_icons.png) 0px -19px no-repeat;
+    z-index: 2;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+}
+
+.teko_available_block:hover input[type="checkbox"] + label:before {
+    background: #6ab400;
+    z-index: 3;
+}
+
+.teko_available_block input[type="checkbox"]:checked + label:after {
+    background-position: 0px 3px;
+}   
+.teko_available_block input[type="checkbox"]:checked + label {  
+    color: #373737;
+} 
+.teko_available_block input[type="checkbox"]:checked + label:before {
+    background: #6ab400;
+    z-index: 1;
+}
+                  
 @media print{
 	.print div.error{font-size:8px !important;}
 	.print table{page-break-after:auto;}

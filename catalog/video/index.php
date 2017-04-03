@@ -533,6 +533,7 @@ $APPLICATION->SetPageProperty("keywords", "ip регистратор, камер
 			0 => "POPULARITY",
 			1 => "NAME",
 			2 => "PRICE",
+            3 => "QUANTITY",
 		),
 		"DEFAULT_LIST_TEMPLATE" => "list",
 		"SECTION_DISPLAY_PROPERTY" => "",

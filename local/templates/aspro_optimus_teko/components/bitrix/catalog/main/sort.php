@@ -19,7 +19,11 @@ else{
 }
 $template = "catalog_".$display;
 ?>
-
+<?                                   
+if($_SESSION["CATALOG_PARAMS"]["CATALOG_AVAILABLE_PRODUCT"] == 'Y') {           
+    $GLOBALS[$arParams["FILTER_NAME"]]['>CATALOG_QUANTITY'] = 0;       
+}
+?> 
 <div class="sort_header view_<?=$display?>">
 	<!--noindex-->
 		<div class="sort_filter">
@@ -89,6 +93,21 @@ $template = "catalog_".$display;
 				$sort = "CATALOG_QUANTITY";
 			}
 			?>
+            <?if($_SESSION["CATALOG_PARAMS"]["CATALOG_AVAILABLE_PRODUCT"] == 'Y'){?> 
+                <div class="teko_available_block">   
+                    <input type="checkbox" checked hidden>
+                    <label title="<?=GetMessage('PRODUCT_AVAILABLE')?>">
+                        <?=GetMessage('PRODUCT_AVAILABLE')?>
+                    </label>
+                </div>
+            <?} else {?>
+                <div class="teko_available_block">   
+                    <input type="checkbox" hidden>
+                    <label title="<?=GetMessage('PRODUCT_AVALIBLE')?>">
+                        <?=GetMessage('PRODUCT_AVAILABLE')?>
+                    </label>
+                </div>
+            <?}?>
 		</div>
 		<div class="sort_display">	
 			<?foreach($arDisplays as $displayType):?>
